@@ -10,11 +10,20 @@ extends Control
 func _ready():
 	visible = false
 	get_parent().get_node("Timer/Timer").connect("timeout", self, "on_timer_out")
+	$Panel/Reintentar.connect("pressed",self,"on_reiniciar_pressed")
+	$Panel/Salir.connect("pressed",self,"on_salir_pressed")
 	
 	
 func on_timer_out():
 	print("timer out")
 	visible = true
+	
+func on_reiniciar_pressed():
+	get_tree().reload_current_scene()
+	
+func on_salir_pressed():
+	#get_tree(escena de menu)
+	pass
 	
 
 
