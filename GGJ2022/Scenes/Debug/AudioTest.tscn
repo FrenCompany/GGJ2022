@@ -1,10 +1,10 @@
 [gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Scenes/DistanceAudio.tscn" type="PackedScene" id=1]
-[ext_resource path="res://assets/Music/debug_melody.wav" type="AudioStream" id=2]
-[ext_resource path="res://assets/Music/debug_chords.wav" type="AudioStream" id=3]
-[ext_resource path="res://assets/Music/debug_melody_2.wav" type="AudioStream" id=4]
-[ext_resource path="res://scripts/AudioTest.gd" type="Script" id=5]
+[ext_resource path="res://Assets/Music/debug_melody.wav" type="AudioStream" id=2]
+[ext_resource path="res://Assets/Music/debug_chords.wav" type="AudioStream" id=3]
+[ext_resource path="res://Assets/Music/debug_melody_2.wav" type="AudioStream" id=4]
+[ext_resource path="res://Scripts/AudioTest.gd" type="Script" id=5]
 
 [node name="AudioTest" type="Node"]
 script = ExtResource( 5 )
