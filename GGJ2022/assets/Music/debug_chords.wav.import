@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/debug_chords.wav-1e7647e7682e6a9f8d65d4bb04a2c9d7.sample"
+
+[deps]
+
+source_file="res://assets/Music/debug_chords.wav"
+dest_files=[ "res://.import/debug_chords.wav-1e7647e7682e6a9f8d65d4bb04a2c9d7.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=true
+compress/mode=0
