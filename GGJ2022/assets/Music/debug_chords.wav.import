@@ -2,12 +2,12 @@
 
 importer="wav"
 type="AudioStreamSample"
-path="res://.import/debug_chords.wav-d2815dac089649d9f97e006e0f1aba04.sample"
+path="res://.import/debug_chords.wav-1e7647e7682e6a9f8d65d4bb04a2c9d7.sample"
 
 [deps]
 
-source_file="res://Assets/Music/debug_chords.wav"
-dest_files=[ "res://.import/debug_chords.wav-d2815dac089649d9f97e006e0f1aba04.sample" ]
+source_file="res://assets/Music/debug_chords.wav"
+dest_files=[ "res://.import/debug_chords.wav-1e7647e7682e6a9f8d65d4bb04a2c9d7.sample" ]
 
 [params]
 

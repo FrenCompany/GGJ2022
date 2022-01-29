@@ -2,12 +2,12 @@
 
 importer="wav"
 type="AudioStreamSample"
-path="res://.import/debug_melody_2.wav-fc89635d49046a1c230a9928662de041.sample"
+path="res://.import/debug_melody_2.wav-d33a6730259d91329982e71d40940ef2.sample"
 
 [deps]
 
-source_file="res://Assets/Music/debug_melody_2.wav"
-dest_files=[ "res://.import/debug_melody_2.wav-fc89635d49046a1c230a9928662de041.sample" ]
+source_file="res://assets/Music/debug_melody_2.wav"
+dest_files=[ "res://.import/debug_melody_2.wav-d33a6730259d91329982e71d40940ef2.sample" ]
 
 [params]
 
