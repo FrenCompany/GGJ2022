@@ -1,16 +1,23 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Scripts/Youtuber.gd" type="Script" id=1]
 [ext_resource path="res://icon.png" type="Texture" id=2]
+[ext_resource path="res://Scenes/Espejo.tscn" type="PackedScene" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 25, 25 )
 
 [node name="Youtuber" type="KinematicBody2D"]
 script = ExtResource( 1 )
+selfie_length = 200
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="."]
 texture = ExtResource( 2 )
+
+[node name="SelfieStick" type="Node2D" parent="."]
+
+[node name="Espejo" parent="SelfieStick" instance=ExtResource( 3 )]
+position = Vector2( 0, 1 )
