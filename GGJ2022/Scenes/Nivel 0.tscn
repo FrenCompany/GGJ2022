@@ -53,7 +53,6 @@ position = Vector2( 208, 460 )
 [node name="colisionfantasma5" type="StaticBody2D" parent="."]
 position = Vector2( 1546.76, 563.88 )
 rotation = 0.544543
-scale = Vector2( 1, 1 )
 collision_layer = 2
 collision_mask = 2
 
@@ -64,7 +63,6 @@ shape = SubResource( 1 )
 [node name="colisionfantasma5" type="StaticBody2D" parent="colisionfantasma5"]
 position = Vector2( 1546.76, 563.88 )
 rotation = 0.544543
-scale = Vector2( 1, 1 )
 collision_layer = 2
 collision_mask = 2
 

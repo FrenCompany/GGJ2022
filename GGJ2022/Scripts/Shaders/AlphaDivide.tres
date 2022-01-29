@@ -1,0 +1,20 @@
+[gd_resource type="Shader" format=2]
+
+[resource]
+code = "shader_type canvas_item;
+
+uniform vec2 pos;
+uniform vec2 dir;
+
+void fragment() {
+	vec2 dir2 = SCREEN_UV - pos;
+	
+	vec4 bg = texture(TEXTURE, UV);
+	
+	float is_visible = dot(dir, dir2);
+	if( is_visible > 0f ) {
+		COLOR = bg;
+	} else {
+		COLOR = vec4(1f, 0f, 0f, 0f);
+	}
+}"
