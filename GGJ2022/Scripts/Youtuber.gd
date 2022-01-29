@@ -7,8 +7,8 @@ export var max_length = 200
 export var min_length = 0
 export var extension = 100
 
-export(ShaderMaterial) var material1;
-export(ShaderMaterial) var material2;
+export(ShaderMaterial) var material_actual;
+export(ShaderMaterial) var material_antiguo;
 
 
 # Called when the node enters the scene tree for the first time.
@@ -40,6 +40,21 @@ func _process(delta):
 	if Input.is_action_just_pressed("ui_retract"):	
 		set_length(selfie_length-extension)
 	var collision =	move_and_collide(delta*vel_actual)
+	
+	var pos_in_viewport = self.get_global_transform_with_canvas().get_origin()
+	var viewport_size = get_viewport().size
+	self.material_actual.set_shader_param("pos", Vector2(
+		pos_in_viewport.x / viewport_size.x,
+		pos_in_viewport.y / viewport_size.y
+	))
+	self.material_actual.set_shader_param("dir", Vector2( 0.5, 0.0 ))
+	
+	self.material_antiguo.set_shader_param("pos", Vector2(
+		pos_in_viewport.x / viewport_size.x,
+		pos_in_viewport.y / viewport_size.y
+	))
+	self.material_antiguo.set_shader_param("dir", Vector2( -0.5, 0.0 ))
+	
 	#collision
 	#$SelfieStick/Fantasma.move_and_slide(vel_actual)
 	

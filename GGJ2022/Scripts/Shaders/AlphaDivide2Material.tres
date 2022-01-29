@@ -5,3 +5,4 @@
 [resource]
 shader = ExtResource( 1 )
 shader_param/pos = null
+shader_param/dir = null

@@ -4,10 +4,9 @@
 code = "shader_type canvas_item;
 
 uniform vec2 pos;
-//uniform vec2 dir;
+uniform vec2 dir;
 
 void fragment() {
-	vec2 dir = vec2(1f, 0f);
 	vec2 dir2 = SCREEN_UV - pos;
 	
 	vec4 bg = texture(TEXTURE, UV);
