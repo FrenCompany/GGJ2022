@@ -7,6 +7,9 @@ export var max_length = 200
 export var min_length = 0
 export var extension = 100
 
+export(ShaderMaterial) var material1;
+export(ShaderMaterial) var material2;
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
