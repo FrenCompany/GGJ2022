@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/repel.ogg-c276edef65d86c79ce1b41653dbf002b.oggstr"
+
+[deps]
+
+source_file="res://assets/Sfx/repel.ogg"
+dest_files=[ "res://.import/repel.ogg-c276edef65d86c79ce1b41653dbf002b.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

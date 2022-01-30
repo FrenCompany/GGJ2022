@@ -20,5 +20,7 @@ func on_timer_out():
 	pass
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-
+func _on_Noisy_noise_produced(noise_object):
+	var time_penalization = 5
+	$Timer.set_wait_time($Timer.time_left - time_penalization)
+	$Timer.start()

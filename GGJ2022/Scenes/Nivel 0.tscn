@@ -93,3 +93,5 @@ position = Vector2( 491, 27 )
 visible = false
 anchor_right = 0.0
 anchor_bottom = 0.0
+
+[connection signal="noise_produced" from="Noisy" to="Timer" method="_on_Noisy_noise_produced"]
