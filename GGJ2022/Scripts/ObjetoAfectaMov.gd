@@ -15,7 +15,6 @@ var _en_espejo = false
 # Called when the node enters the scene tree for the first time.
 func _init():
 	add_to_group("afecta_mov")
-	visible = false
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -30,12 +29,10 @@ func registrar_espejo(espejo):
 
 func entro_espejo(area):
 	if area == self:
-		visible = true
 		_en_espejo = true
 
 func salio_espejo(area):
 	if area == self:
-		visible = false
 		_en_espejo = false
 
 func registrar_fantasma(fantasma):
