@@ -12,7 +12,7 @@
 [ext_resource path="res://assets/Sprites/piso_antiguo.png" type="Texture" id=10]
 [ext_resource path="res://Scenes/Hoyo.tscn" type="PackedScene" id=11]
 [ext_resource path="res://Scenes/Piano.tscn" type="PackedScene" id=12]
-[ext_resource path="res://Scenes/ObjetoAfectaMov.tscn" type="PackedScene" id=13]
+[ext_resource path="res://Scenes/MesaAntigua.tscn" type="PackedScene" id=13]
 [ext_resource path="res://assets/Music/level.ogg" type="AudioStream" id=14]
 [ext_resource path="res://assets/Sfx/attract.ogg" type="AudioStream" id=15]
 [ext_resource path="res://assets/Sfx/repel.ogg" type="AudioStream" id=16]
@@ -43,31 +43,6 @@ position = Vector2( 414, 35 )
 [node name="EntityLayer" type="CanvasLayer" parent="."]
 pause_mode = 1
 
-[node name="NoisyObjects" type="Node2D" parent="EntityLayer"]
-z_index = 1
-
-[node name="Noisy5" parent="EntityLayer/NoisyObjects" instance=ExtResource( 1 )]
-position = Vector2( 353, 157 )
-
-[node name="Noisy4" parent="EntityLayer/NoisyObjects" instance=ExtResource( 1 )]
-position = Vector2( 102, 77 )
-
-[node name="Noisy3" parent="EntityLayer/NoisyObjects" instance=ExtResource( 1 )]
-position = Vector2( 424, 523 )
-
-[node name="Noisy2" parent="EntityLayer/NoisyObjects" instance=ExtResource( 1 )]
-position = Vector2( 634, 142 )
-
-[node name="Noisy" parent="EntityLayer/NoisyObjects" instance=ExtResource( 1 )]
-position = Vector2( 680, 327 )
-
-[node name="Youtuber" parent="EntityLayer" instance=ExtResource( 7 )]
-position = Vector2( 582, 306 )
-selfie_length = 100
-
-[node name="Fantasma" parent="EntityLayer" instance=ExtResource( 3 )]
-position = Vector2( 208, 460 )
-
 [node name="BordesNivel" type="StaticBody2D" parent="EntityLayer"]
 collision_layer = 3
 collision_mask = 3
@@ -88,29 +63,90 @@ shape = SubResource( 2 )
 position = Vector2( 840, 300 )
 shape = SubResource( 2 )
 
+[node name="NoisyObjects" type="Node2D" parent="EntityLayer"]
+z_index = 1
+
+[node name="Noisy" parent="EntityLayer/NoisyObjects" instance=ExtResource( 1 )]
+position = Vector2( 170, 146 )
+
+[node name="Noisy2" parent="EntityLayer/NoisyObjects" instance=ExtResource( 1 )]
+position = Vector2( 169, 201 )
+
+[node name="Noisy3" parent="EntityLayer/NoisyObjects" instance=ExtResource( 1 )]
+position = Vector2( 159, 500 )
+
+[node name="Noisy4" parent="EntityLayer/NoisyObjects" instance=ExtResource( 1 )]
+position = Vector2( 106, 530 )
+
+[node name="Noisy5" parent="EntityLayer/NoisyObjects" instance=ExtResource( 1 )]
+position = Vector2( 488, 133 )
+
+[node name="Noisy6" parent="EntityLayer/NoisyObjects" instance=ExtResource( 1 )]
+position = Vector2( 502, 188 )
+
+[node name="Youtuber" parent="EntityLayer" instance=ExtResource( 7 )]
+position = Vector2( 82, 114 )
+selfie_length = 100
+angulo_inicial = 270
+
+[node name="Fantasma" parent="EntityLayer" instance=ExtResource( 3 )]
+position = Vector2( 92, 501 )
+
+[node name="ObjetosAntiguos" type="Node" parent="EntityLayer"]
+
+[node name="MesaAntigua" parent="EntityLayer/ObjetosAntiguos" instance=ExtResource( 13 )]
+position = Vector2( 253, 499 )
+
+[node name="MesaAntigua2" parent="EntityLayer/ObjetosAntiguos" instance=ExtResource( 13 )]
+position = Vector2( 501, 429 )
+
+[node name="MesaAntigua3" parent="EntityLayer/ObjetosAntiguos" instance=ExtResource( 13 )]
+position = Vector2( 437, 328 )
+
+[node name="MesaAntigua4" parent="EntityLayer/ObjetosAntiguos" instance=ExtResource( 13 )]
+position = Vector2( 539, 60 )
+
+[node name="MesaAntigua5" parent="EntityLayer/ObjetosAntiguos" instance=ExtResource( 13 )]
+position = Vector2( 592, 153 )
+
 [node name="Hoyos" type="Node" parent="EntityLayer"]
 
 [node name="Hoyo" parent="EntityLayer/Hoyos" instance=ExtResource( 11 )]
-position = Vector2( 421, 358 )
+position = Vector2( 166, 61 )
 
 [node name="Hoyo2" parent="EntityLayer/Hoyos" instance=ExtResource( 11 )]
-position = Vector2( 78, 473 )
+position = Vector2( 229, 115 )
+
+[node name="Hoyo3" parent="EntityLayer/Hoyos" instance=ExtResource( 11 )]
+position = Vector2( 177, 318 )
+
+[node name="Hoyo4" parent="EntityLayer/Hoyos" instance=ExtResource( 11 )]
+position = Vector2( 230, 245 )
+
+[node name="Hoyo5" parent="EntityLayer/Hoyos" instance=ExtResource( 11 )]
+position = Vector2( 466, 559 )
+
+[node name="Hoyo6" parent="EntityLayer/Hoyos" instance=ExtResource( 11 )]
+position = Vector2( 510, 481 )
+
+[node name="Hoyo7" parent="EntityLayer/Hoyos" instance=ExtResource( 11 )]
+position = Vector2( 458, 406 )
+
+[node name="Hoyo8" parent="EntityLayer/Hoyos" instance=ExtResource( 11 )]
+position = Vector2( 411, 350 )
 
 [node name="InteractuablesFantasma" type="Node" parent="EntityLayer"]
 
 [node name="Piano" parent="EntityLayer/InteractuablesFantasma" instance=ExtResource( 12 )]
-position = Vector2( 229, 89 )
+position = Vector2( 197, 239 )
 
 [node name="Piano2" parent="EntityLayer/InteractuablesFantasma" instance=ExtResource( 12 )]
-position = Vector2( 699, 521 )
+position = Vector2( 635, 465 )
 
 [node name="AttractRepelObjets" type="Node" parent="EntityLayer"]
 
-[node name="ObjetoAfectaMov" parent="EntityLayer/AttractRepelObjets" instance=ExtResource( 13 )]
-position = Vector2( 220, 272 )
-
 [node name="Goal" parent="EntityLayer" instance=ExtResource( 17 )]
-position = Vector2( 612, 527 )
+position = Vector2( 722, 76 )
 
 [node name="Background" type="CanvasLayer" parent="."]
 layer = -5

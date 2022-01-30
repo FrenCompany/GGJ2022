@@ -6,6 +6,7 @@ export var selfie_length = 100
 export var max_length = 200
 export var min_length = 0
 export var extension = 100
+export var angulo_inicial = 0
 
 export(ShaderMaterial) var material_actual;
 export(ShaderMaterial) var material_antiguo;
@@ -20,11 +21,9 @@ func _ready():
 	self.material_antiguo.set_shader_param("screen_ratio", viewport_size.x / viewport_size.y)
 	
 	$SelfieStick/Espejo.position = Vector2(-selfie_length,0)
-	#$SelfieStick/Fantasma.position = Vector2(2*-selfie_length,0)
-	#$ColisionFantasma.position = $SelfieStick/Fantasma.position
-	
-	
-	
+	$SelfieStick.rotation_degrees += angulo_inicial
+	self.update_shader_materials_angle()
+
 
 func _process(delta):
 	
