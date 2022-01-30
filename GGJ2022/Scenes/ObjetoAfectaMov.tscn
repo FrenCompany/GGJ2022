@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Scripts/ObjetoAfectaMov.gd" type="Script" id=1]
-[ext_resource path="res://icon.png" type="Texture" id=2]
+[ext_resource path="res://assets/Sprites/influencia.png" type="Texture" id=2]
 [ext_resource path="res://Scenes/SpriteTypes/SpriteAntiguo.tscn" type="PackedScene" id=3]
 
 [sub_resource type="CircleShape2D" id=1]
@@ -15,5 +15,4 @@ script = ExtResource( 1 )
 shape = SubResource( 1 )
 
 [node name="SpriteAntiguo" parent="." instance=ExtResource( 3 )]
-scale = Vector2( 0.281, 0.281 )
 texture = ExtResource( 2 )
