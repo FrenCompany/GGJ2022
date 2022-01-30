@@ -36,3 +36,9 @@ func update_attract_repel_audio():
 		$RepelSound.stop()
 	elif atract_repel_count['repel'] > 0 and (not $RepelSound.is_playing()):
 		$RepelSound.play()
+
+
+func on_goal_reached(body):
+	$EntityLayer/Goal.queue_free()
+	print("nivel terminado")
+	$LevelFinishedSound.play()
