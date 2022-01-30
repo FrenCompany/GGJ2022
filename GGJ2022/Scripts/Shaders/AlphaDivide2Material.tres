@@ -6,3 +6,4 @@
 shader = ExtResource( 1 )
 shader_param/pos = null
 shader_param/dir = null
+shader_param/screen_ratio = null

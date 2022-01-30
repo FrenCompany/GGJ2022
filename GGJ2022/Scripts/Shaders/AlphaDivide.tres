@@ -5,9 +5,12 @@ code = "shader_type canvas_item;
 
 uniform vec2 pos;
 uniform vec2 dir;
+uniform float screen_ratio;
 
 void fragment() {
-	vec2 dir2 = SCREEN_UV - pos;
+	vec2 pos_uv = vec2(pos.x * screen_ratio, pos.y);
+	vec2 screen_uv = vec2(SCREEN_UV.x * screen_ratio, SCREEN_UV.y);
+	vec2 dir2 = screen_uv - pos_uv;
 	
 	vec4 bg = texture(TEXTURE, UV);
 	
