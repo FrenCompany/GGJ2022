@@ -84,7 +84,6 @@ shape = SubResource( 1 )
 
 [node name="Timer" parent="." instance=ExtResource( 3 )]
 position = Vector2( 491, 27 )
-time = 4
 
 [node name="Game Over" parent="." instance=ExtResource( 4 )]
 visible = false
