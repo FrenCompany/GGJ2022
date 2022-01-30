@@ -8,6 +8,7 @@
 [sub_resource type="RectangleShape2D" id=1]
 
 [node name="Noisy" type="Area2D"]
+scale = Vector2( 2, 2 )
 z_index = 1
 script = ExtResource( 1 )
 
