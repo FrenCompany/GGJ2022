@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/piso_antiguo.png-cb6d6ea6cdd3d317b3ca977f44195d15.stex"
+path="res://.import/hoyo_piso.png-183c1982e70bdc6eed5cb2f5ea5392e3.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Sprites/piso_antiguo.png"
-dest_files=[ "res://.import/piso_antiguo.png-cb6d6ea6cdd3d317b3ca977f44195d15.stex" ]
+source_file="res://assets/Sprites/hoyo_piso.png"
+dest_files=[ "res://.import/hoyo_piso.png-183c1982e70bdc6eed5cb2f5ea5392e3.stex" ]
 
 [params]
 
@@ -19,7 +19,7 @@ compress/lossy_quality=0.7
 compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
-flags/repeat=1
+flags/repeat=0
 flags/filter=false
 flags/mipmaps=false
 flags/anisotropic=false

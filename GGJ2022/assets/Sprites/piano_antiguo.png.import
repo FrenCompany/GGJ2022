@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/piso_antiguo.png-cb6d6ea6cdd3d317b3ca977f44195d15.stex"
+path="res://.import/piano_antiguo.png-4e8643125b743779096ba750c533317f.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Sprites/piso_antiguo.png"
-dest_files=[ "res://.import/piso_antiguo.png-cb6d6ea6cdd3d317b3ca977f44195d15.stex" ]
+source_file="res://assets/Sprites/piano_antiguo.png"
+dest_files=[ "res://.import/piano_antiguo.png-4e8643125b743779096ba750c533317f.stex" ]
 
 [params]
 
@@ -19,7 +19,7 @@ compress/lossy_quality=0.7
 compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
-flags/repeat=1
+flags/repeat=0
 flags/filter=false
 flags/mipmaps=false
 flags/anisotropic=false
