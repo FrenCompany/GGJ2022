@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Scenes/Youtuber.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/Fantasma.tscn" type="PackedScene" id=2]
@@ -6,49 +6,10 @@
 [ext_resource path="res://Scenes/GameOver.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Scenes/Noisy.tscn" type="PackedScene" id=5]
 
-[sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 50, 50 )
-
 [node name="Nivel 1" type="Node2D"]
 
 [node name="Youtuber" parent="." instance=ExtResource( 1 )]
 position = Vector2( 582, 306 )
-
-[node name="colisionfantasma4" type="StaticBody2D" parent="."]
-position = Vector2( 3248, 704 )
-collision_layer = 2
-collision_mask = 2
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="colisionfantasma4"]
-position = Vector2( -3212, -275 )
-rotation = -1.83259
-shape = SubResource( 1 )
-
-[node name="colisionfantasma2" type="StaticBody2D" parent="."]
-position = Vector2( 1426, 358 )
-rotation = 2.61799
-collision_layer = 2
-collision_mask = 2
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="colisionfantasma2"]
-position = Vector2( 1063.27, 744.365 )
-shape = SubResource( 1 )
-
-[node name="colisionyoutuber" type="StaticBody2D" parent="."]
-position = Vector2( 812, 176 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="colisionyoutuber"]
-shape = SubResource( 1 )
-
-[node name="colisionfantasma" type="StaticBody2D" parent="."]
-position = Vector2( 812, 176 )
-collision_layer = 2
-collision_mask = 2
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="colisionfantasma"]
-position = Vector2( -466, 373 )
-rotation = 2.61799
-shape = SubResource( 1 )
 
 [node name="Noisy" parent="." instance=ExtResource( 5 )]
 position = Vector2( 798, 364 )
@@ -56,40 +17,10 @@ position = Vector2( 798, 364 )
 [node name="Fantasma" parent="." instance=ExtResource( 2 )]
 position = Vector2( 208, 460 )
 
-[node name="colisionfantasma5" type="StaticBody2D" parent="."]
-position = Vector2( 1546.76, 563.88 )
-rotation = 0.544543
-collision_layer = 2
-collision_mask = 2
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="colisionfantasma5"]
-position = Vector2( -1208.32, 367.169 )
-shape = SubResource( 1 )
-
-[node name="colisionfantasma5" type="StaticBody2D" parent="colisionfantasma5"]
-position = Vector2( 1546.76, 563.88 )
-rotation = 0.544543
-collision_layer = 2
-collision_mask = 2
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="colisionfantasma5/colisionfantasma5"]
-position = Vector2( -2245.64, 1583.5 )
-shape = SubResource( 1 )
-
-[node name="colisionfantasma3" type="StaticBody2D" parent="."]
-position = Vector2( 812, 176 )
-rotation = 0.272271
-collision_layer = 2
-collision_mask = 2
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="colisionfantasma3"]
-position = Vector2( -311, 287 )
-shape = SubResource( 1 )
-
 [node name="Timer" parent="." instance=ExtResource( 3 )]
 position = Vector2( 491, 27 )
 
-[node name="Game Over" parent="." instance=ExtResource( 4 )]
+[node name="GameOver" parent="." instance=ExtResource( 4 )]
 visible = false
 anchor_right = 0.0
 anchor_bottom = 0.0
