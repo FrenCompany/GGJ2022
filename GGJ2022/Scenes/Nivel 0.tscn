@@ -87,5 +87,6 @@ position = Vector2( 491, 27 )
 time = 4
 
 [node name="Game Over" parent="." instance=ExtResource( 4 )]
+visible = false
 anchor_right = 0.0
 anchor_bottom = 0.0

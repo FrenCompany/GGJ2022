@@ -15,7 +15,6 @@ func _ready():
 	
 	
 func on_timer_out():
-	print("timer out")
 	visible = true
 	
 func on_reiniciar_pressed():

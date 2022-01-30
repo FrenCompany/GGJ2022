@@ -1,10 +1,10 @@
 [gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Scripts/Fantasma.gd" type="Script" id=1]
-[ext_resource path="res://icon.png" type="Texture" id=2]
+[ext_resource path="res://assets/Sprites/esme.png" type="Texture" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 25, 25 )
+extents = Vector2( 32, 32 )
 
 [node name="Fantasma" type="KinematicBody2D"]
 collision_layer = 2
@@ -15,5 +15,5 @@ script = ExtResource( 1 )
 shape = SubResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="."]
-self_modulate = Color( 0.490196, 0.0862745, 0.921569, 1 )
+scale = Vector2( 2, 2 )
 texture = ExtResource( 2 )
