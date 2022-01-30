@@ -67,6 +67,7 @@ selfie_length = 100
 
 [node name="Fantasma" parent="EntityLayer" instance=ExtResource( 3 )]
 position = Vector2( 208, 460 )
+dir = Vector2( 1, 1 )
 
 [node name="BordesNivel" type="StaticBody2D" parent="EntityLayer"]
 collision_layer = 3
