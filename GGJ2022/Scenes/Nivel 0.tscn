@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Scenes/Youtuber.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/Fantasma.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scenes/Timer.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Scenes/GameOver.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scenes/Noisy.tscn" type="PackedScene" id=5]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 50, 50 )
@@ -48,6 +49,9 @@ collision_mask = 2
 position = Vector2( -466, 373 )
 rotation = 2.61799
 shape = SubResource( 1 )
+
+[node name="Noisy" parent="." instance=ExtResource( 5 )]
+position = Vector2( 798, 364 )
 
 [node name="Fantasma" parent="." instance=ExtResource( 2 )]
 position = Vector2( 208, 460 )
