@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/bouncepiano4.ogg-57c94689bad26f82c657efe989beaed0.oggstr"
+
+[deps]
+
+source_file="res://assets/Sfx/bouncepiano4.ogg"
+dest_files=[ "res://.import/bouncepiano4.ogg-57c94689bad26f82c657efe989beaed0.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0
