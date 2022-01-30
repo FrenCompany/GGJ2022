@@ -50,9 +50,6 @@ position = Vector2( -466, 373 )
 rotation = 2.61799
 shape = SubResource( 1 )
 
-[node name="Noisy" parent="." instance=ExtResource( 5 )]
-position = Vector2( 798, 364 )
-
 [node name="Fantasma" parent="." instance=ExtResource( 2 )]
 position = Vector2( 208, 460 )
 
@@ -89,9 +86,12 @@ shape = SubResource( 1 )
 [node name="Timer" parent="." instance=ExtResource( 3 )]
 position = Vector2( 491, 27 )
 
+[node name="NoisyObjects" type="Node" parent="."]
+
+[node name="Noisy" parent="NoisyObjects" instance=ExtResource( 5 )]
+position = Vector2( 798, 364 )
+
 [node name="Game Over" parent="." instance=ExtResource( 4 )]
 visible = false
 anchor_right = 0.0
 anchor_bottom = 0.0
-
-[connection signal="noise_produced" from="Noisy" to="Timer" method="_on_Noisy_noise_produced"]

@@ -12,6 +12,10 @@ func _ready():
 	$Timer.connect("timeOut",self,"on_timer_out")
 	$Timer.set_wait_time(time)
 	$Timer.start()
+	
+	set_up_noisy_signals()
+
+
 func _process(delta):
 	$RichTextLabel.bbcode_text="[center]"+str(int($Timer.time_left))+"[/center]"#str(minutes) + ":" + str(seconds) + ":" + str(milliseconds))
 	
@@ -24,3 +28,8 @@ func _on_Noisy_noise_produced(noise_object):
 	var time_penalization = 5
 	$Timer.set_wait_time($Timer.time_left - time_penalization)
 	$Timer.start()
+
+
+func set_up_noisy_signals():
+	for child in self.get_parent().get_node("NoisyObjects").get_children():
+		child.connect("noise_produced", self, "_on_Noisy_noise_produced")
