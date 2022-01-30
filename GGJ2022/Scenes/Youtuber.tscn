@@ -10,6 +10,7 @@
 extents = Vector2( 28, 32 )
 
 [node name="Youtuber" type="KinematicBody2D"]
+z_index = 2
 script = ExtResource( 1 )
 selfie_length = 200
 material_actual = ExtResource( 4 )
@@ -23,7 +24,6 @@ scale = Vector2( 2, 2 )
 texture = ExtResource( 2 )
 
 [node name="SelfieStick" type="Node2D" parent="."]
-visible = false
 
 [node name="Espejo" parent="SelfieStick" instance=ExtResource( 3 )]
 position = Vector2( 0, 1 )

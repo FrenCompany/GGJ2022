@@ -23,6 +23,8 @@ func _ready():
 	#$SelfieStick/Fantasma.position = Vector2(2*-selfie_length,0)
 	#$ColisionFantasma.position = $SelfieStick/Fantasma.position
 	
+	
+	
 
 func _process(delta):
 	
