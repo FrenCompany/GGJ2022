@@ -11,13 +11,22 @@ func _ready():
 		dir = Vector2(0, vel_max)
 
 	get_tree().call_group("afecta_mov", "registrar_fantasma", self)
-	
+
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	var collision = move_and_collide(delta * dir)
 	if collision:
+		
 		dir = dir.bounce(collision.normal)
+		var collider = collision.collider
+		if( collider.has_method("affect_ghost") ):
+			collider.affect_ghost(self)
+		
+		else:
+			$BounceSfx.play()
+			
+
 
 func _on_afectar_mov(objeto):
 	objeto.afectar_mov_fantasma(self)

@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Scenes/SpriteTypes/SpriteAntiguo.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/Sprites/piano_antiguo.png" type="Texture" id=2]
+[ext_resource path="res://Scripts/Piano.gd" type="Script" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 18.3848, 14.6725 )
@@ -16,6 +17,7 @@ extents = Vector2( 30.5, 16 )
 scale = Vector2( 2, 2 )
 collision_layer = 2
 collision_mask = 2
+script = ExtResource( 3 )
 
 [node name="SpriteAntiguo" parent="." instance=ExtResource( 1 )]
 texture = ExtResource( 2 )
@@ -27,7 +29,6 @@ texture = ExtResource( 2 )
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
 position = Vector2( 2.625, -7.625 )
 rotation = 0.785398
-scale = Vector2( 1, 1 )
 shape = SubResource( 1 )
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="."]
@@ -37,3 +38,6 @@ shape = SubResource( 2 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 9.5, 11 )
 shape = SubResource( 3 )
+
+[node name="PianoPlayer" type="AudioStreamPlayer" parent="."]
+volume_db = -5.0

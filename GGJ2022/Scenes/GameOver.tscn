@@ -1,7 +1,9 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://assets/Fonts/BitPotionExt.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://Scripts/GameOver.gd" type="Script" id=2]
+[ext_resource path="res://assets/Sfx/gameover.ogg" type="AudioStream" id=3]
+[ext_resource path="res://assets/Sfx/piano3.ogg" type="AudioStream" id=4]
 
 [sub_resource type="DynamicFont" id=1]
 size = 64
@@ -73,3 +75,13 @@ margin_right = 80.0
 margin_bottom = -102.0
 custom_fonts/font = SubResource( 3 )
 text = "Salir"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="GameOverSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 3 )
+
+[node name="ReintentarSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 4 )
+volume_db = -4.0

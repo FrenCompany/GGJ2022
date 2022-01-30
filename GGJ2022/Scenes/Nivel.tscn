@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://Scenes/Noisy.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/SpriteTypes/SpriteAntiguo.tscn" type="PackedScene" id=2]
@@ -7,20 +7,24 @@
 [ext_resource path="res://Scenes/GameOver.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Scenes/Timer.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Scenes/Youtuber.tscn" type="PackedScene" id=7]
-[ext_resource path="res://Scenes/ObjetoAfectaMov.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Scripts/Nivel.gd" type="Script" id=8]
 [ext_resource path="res://assets/Sprites/piso_actual.png" type="Texture" id=9]
 [ext_resource path="res://assets/Sprites/piso_antiguo.png" type="Texture" id=10]
 [ext_resource path="res://Scenes/Hoyo.tscn" type="PackedScene" id=11]
 [ext_resource path="res://Scenes/Piano.tscn" type="PackedScene" id=12]
-[ext_resource path="res://Scenes/MesaAntigua.tscn" type="PackedScene" id=13]
+[ext_resource path="res://Scenes/ObjetoAfectaMov.tscn" type="PackedScene" id=13]
+[ext_resource path="res://assets/Music/level.ogg" type="AudioStream" id=14]
+[ext_resource path="res://assets/Sfx/attract.ogg" type="AudioStream" id=15]
+[ext_resource path="res://assets/Sfx/repel.ogg" type="AudioStream" id=16]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 512, 40 )
+extents = Vector2( 475, 40 )
 
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 40, 300 )
 
 [node name="Nivel" type="Node2D"]
+script = ExtResource( 8 )
 
 [node name="GameOverLayer" type="CanvasLayer" parent="."]
 pause_mode = 2
@@ -62,20 +66,16 @@ selfie_length = 100
 [node name="Fantasma" parent="EntityLayer" instance=ExtResource( 3 )]
 position = Vector2( 208, 460 )
 
-[node name="ObjetoAfectaMov" parent="EntityLayer" instance=ExtResource( 8 )]
-position = Vector2( 251, 270 )
-influencia = 10
-
 [node name="BordesNivel" type="StaticBody2D" parent="EntityLayer"]
 collision_layer = 3
 collision_mask = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="EntityLayer/BordesNivel"]
-position = Vector2( 512, -40 )
+position = Vector2( 400, -40 )
 shape = SubResource( 1 )
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="EntityLayer/BordesNivel"]
-position = Vector2( 512, 640 )
+position = Vector2( 400, 640 )
 shape = SubResource( 1 )
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="EntityLayer/BordesNivel"]
@@ -94,6 +94,19 @@ position = Vector2( 421, 358 )
 [node name="Hoyo2" parent="EntityLayer/Hoyos" instance=ExtResource( 11 )]
 position = Vector2( 78, 473 )
 
+[node name="InteractuablesFantasma" type="Node" parent="EntityLayer"]
+
+[node name="Piano" parent="EntityLayer/InteractuablesFantasma" instance=ExtResource( 12 )]
+position = Vector2( 229, 89 )
+
+[node name="Piano2" parent="EntityLayer/InteractuablesFantasma" instance=ExtResource( 12 )]
+position = Vector2( 699, 521 )
+
+[node name="AttractRepelObjets" type="Node" parent="EntityLayer"]
+
+[node name="ObjetoAfectaMov" parent="EntityLayer/AttractRepelObjets" instance=ExtResource( 13 )]
+position = Vector2( 220, 272 )
+
 [node name="Background" type="CanvasLayer" parent="."]
 layer = -5
 
@@ -110,14 +123,15 @@ texture = ExtResource( 10 )
 region_enabled = true
 region_rect = Rect2( 400, 300, 800, 600 )
 
-[node name="Piano" parent="." instance=ExtResource( 12 )]
-position = Vector2( 229, 89 )
+[node name="Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 14 )
+volume_db = -6.0
+autoplay = true
 
-[node name="Piano2" parent="." instance=ExtResource( 12 )]
-position = Vector2( 699, 521 )
+[node name="RepelSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 16 )
+volume_db = -12.0
 
-[node name="MesaAntigua" parent="." instance=ExtResource( 13 )]
-position = Vector2( 72, 287 )
-
-[node name="MesaAntigua2" parent="." instance=ExtResource( 13 )]
-position = Vector2( 752, 314 )
+[node name="AttractSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 15 )
+volume_db = -12.0

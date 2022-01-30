@@ -1,6 +1,8 @@
 extends Area2D
 
 signal afectar_mov
+signal gets_visible(type)
+signal gets_invisible(type)
 
 # define si atrae (+) o repele (-) al fantasma y con que fuerza
 export var influencia = 1
@@ -30,10 +32,12 @@ func registrar_espejo(espejo):
 func entro_espejo(area):
 	if area == self:
 		_en_espejo = true
+		self.emit_visible()
 
 func salio_espejo(area):
 	if area == self:
 		_en_espejo = false
+		self.emit_invisible()
 
 func registrar_fantasma(fantasma):
 	self.connect("afectar_mov", fantasma, "_on_afectar_mov")
@@ -46,3 +50,19 @@ func afectar_mov_fantasma(fantasma):
 		var direccion = fantasma.position.direction_to(position)
 		fantasma.dir += direccion * influencia * poder
 		fantasma.dir = fantasma.dir.clamped(fantasma.vel_max)
+
+func get_type():
+	if (self.influencia > 0):
+		return 'attract'
+	else:
+		return 'repel'
+
+
+func emit_visible():
+	var type = self.get_type()
+	emit_signal("gets_visible", type)
+
+
+func emit_invisible():
+	var type = self.get_type()
+	emit_signal("gets_invisible", type)
