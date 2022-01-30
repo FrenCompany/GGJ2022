@@ -65,12 +65,10 @@ func set_length(length):
 	if length<=max_length and length>=min_length:
 		selfie_length = length
 		$SelfieStick/Espejo.position = Vector2(-selfie_length,0)
-		#$SelfieStick/Fantasma.position = Vector2(2*-selfie_length,0)
-		#$ColisionFantasma.position = $SelfieStick/Fantasma.position
 	
 
 func update_mirror_shader_materials_pos():
-	var pos_in_viewport = self.get_global_transform_with_canvas().get_origin()
+	var pos_in_viewport = $SelfieStick/Espejo.get_global_transform_with_canvas().get_origin()
 	var viewport_size = get_viewport().size
 	self.material_actual.set_shader_param("pos", Vector2(
 		pos_in_viewport.x / viewport_size.x,

@@ -1,95 +1,83 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://Scenes/Youtuber.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/Fantasma.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scenes/Timer.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Scenes/GameOver.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Scenes/Noisy.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scenes/ObjetoAfectaMov.tscn" type="PackedScene" id=6]
+[ext_resource path="res://assets/Sprites/piso_antiguo.png" type="Texture" id=7]
+[ext_resource path="res://assets/Sprites/piso_actual.png" type="Texture" id=8]
+[ext_resource path="res://Scenes/SpriteTypes/SpriteAntiguo.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Scenes/SpriteTypes/SpriteActual.tscn" type="PackedScene" id=10]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 50, 50 )
+extents = Vector2( 512, 10 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 10, 300 )
 
 [node name="Nivel 1" type="Node2D"]
 
-[node name="Youtuber" parent="." instance=ExtResource( 1 )]
-position = Vector2( 582, 306 )
+[node name="GameOverLayer" type="CanvasLayer" parent="."]
+pause_mode = 2
+layer = 10
 
-[node name="colisionfantasma4" type="StaticBody2D" parent="."]
-position = Vector2( 3248, 704 )
-collision_layer = 2
-collision_mask = 2
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="colisionfantasma4"]
-position = Vector2( -3212, -275 )
-rotation = -1.83259
-shape = SubResource( 1 )
-
-[node name="colisionfantasma2" type="StaticBody2D" parent="."]
-position = Vector2( 1426, 358 )
-rotation = 2.61799
-collision_layer = 2
-collision_mask = 2
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="colisionfantasma2"]
-position = Vector2( 1063.27, 744.365 )
-shape = SubResource( 1 )
-
-[node name="colisionyoutuber" type="StaticBody2D" parent="."]
-position = Vector2( 812, 176 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="colisionyoutuber"]
-shape = SubResource( 1 )
-
-[node name="colisionfantasma" type="StaticBody2D" parent="."]
-position = Vector2( 812, 176 )
-collision_layer = 2
-collision_mask = 2
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="colisionfantasma"]
-position = Vector2( -466, 373 )
-rotation = 2.61799
-shape = SubResource( 1 )
-
-[node name="Noisy" parent="." instance=ExtResource( 5 )]
-position = Vector2( 798, 364 )
-
-[node name="Fantasma" parent="." instance=ExtResource( 2 )]
-position = Vector2( 208, 460 )
-
-[node name="colisionfantasma5" type="StaticBody2D" parent="."]
-position = Vector2( 1546.76, 563.88 )
-rotation = 0.544543
-collision_layer = 2
-collision_mask = 2
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="colisionfantasma5"]
-position = Vector2( -1208.32, 367.169 )
-shape = SubResource( 1 )
-
-[node name="colisionfantasma5" type="StaticBody2D" parent="colisionfantasma5"]
-position = Vector2( 1546.76, 563.88 )
-rotation = 0.544543
-collision_layer = 2
-collision_mask = 2
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="colisionfantasma5/colisionfantasma5"]
-position = Vector2( -2245.64, 1583.5 )
-shape = SubResource( 1 )
-
-[node name="colisionfantasma3" type="StaticBody2D" parent="."]
-position = Vector2( 812, 176 )
-rotation = 0.272271
-collision_layer = 2
-collision_mask = 2
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="colisionfantasma3"]
-position = Vector2( -311, 287 )
-shape = SubResource( 1 )
-
-[node name="Timer" parent="." instance=ExtResource( 3 )]
-position = Vector2( 491, 27 )
-
-[node name="Game Over" parent="." instance=ExtResource( 4 )]
+[node name="GameOver" parent="GameOverLayer" instance=ExtResource( 4 )]
 visible = false
 anchor_right = 0.0
 anchor_bottom = 0.0
+
+[node name="Timer" parent="GameOverLayer" instance=ExtResource( 3 )]
+position = Vector2( 491, 27 )
+
+[node name="EntityLayer" type="CanvasLayer" parent="."]
+pause_mode = 1
+
+[node name="Youtuber" parent="EntityLayer" instance=ExtResource( 1 )]
+position = Vector2( 582, 306 )
+
+[node name="Fantasma" parent="EntityLayer" instance=ExtResource( 2 )]
+position = Vector2( 208, 460 )
+
+[node name="ObjetoAfectaMov" parent="EntityLayer" instance=ExtResource( 6 )]
+position = Vector2( 251, 270 )
+influencia = 10
+
+[node name="NoisyObjects" type="Node" parent="EntityLayer"]
+
+[node name="Noisy" parent="EntityLayer/NoisyObjects" instance=ExtResource( 5 )]
+position = Vector2( 798, 364 )
+
+[node name="BordesNivel" type="StaticBody2D" parent="EntityLayer"]
+collision_layer = 3
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="EntityLayer/BordesNivel"]
+position = Vector2( 512, -10 )
+shape = SubResource( 1 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="EntityLayer/BordesNivel"]
+position = Vector2( 512, 610 )
+shape = SubResource( 1 )
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="EntityLayer/BordesNivel"]
+position = Vector2( -10, 300 )
+shape = SubResource( 2 )
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="EntityLayer/BordesNivel"]
+position = Vector2( 1034, 300 )
+shape = SubResource( 2 )
+
+[node name="Background" type="CanvasLayer" parent="."]
+layer = -5
+
+[node name="Node2D" type="Node2D" parent="Background"]
+position = Vector2( 512, 300 )
+scale = Vector2( 20, 20 )
+
+[node name="SpriteActual" parent="Background/Node2D" instance=ExtResource( 10 )]
+texture = ExtResource( 8 )
+
+[node name="SpriteAntiguo" parent="Background/Node2D" instance=ExtResource( 9 )]
+texture = ExtResource( 7 )
