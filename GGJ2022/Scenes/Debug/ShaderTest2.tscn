@@ -11,6 +11,7 @@
 
 [node name="Youtuber" parent="." instance=ExtResource( 1 )]
 position = Vector2( 582, 306 )
+selfie_length = 100
 
 [node name="SpriteActual2" parent="." instance=ExtResource( 4 )]
 position = Vector2( 586, 172 )

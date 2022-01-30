@@ -26,10 +26,11 @@ func on_timer_out():
 
 func _on_Noisy_noise_produced(noise_object):
 	var time_penalization = 5
-	$Timer.set_wait_time($Timer.time_left - time_penalization)
+	var time_left = max($Timer.time_left - time_penalization, 0.1)
+	$Timer.set_wait_time(time_left)
 	$Timer.start()
 
 
 func set_up_noisy_signals():
-	for child in self.get_parent().get_node("NoisyObjects").get_children():
+	for child in self.get_node("../../EntityLayer/NoisyObjects").get_children():
 		child.connect("noise_produced", self, "_on_Noisy_noise_produced")

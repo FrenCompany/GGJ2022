@@ -15,9 +15,11 @@ func _ready():
 
 func on_timer_out():
 	visible = true
+	get_tree().paused = true
 	
 func on_reiniciar_pressed():
 	get_tree().reload_current_scene()
+	get_tree().paused = false
 	
 func on_salir_pressed():
 	#get_tree(escena de menu)
