@@ -21,6 +21,7 @@ position = Vector2( 208, 460 )
 position = Vector2( 491, 27 )
 
 [node name="GameOver" parent="." instance=ExtResource( 4 )]
+
 visible = false
 anchor_right = 0.0
 anchor_bottom = 0.0
