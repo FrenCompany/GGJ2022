@@ -12,10 +12,8 @@ func _ready():
 	get_parent().get_node("Timer/Timer").connect("timeout", self, "on_timer_out")
 	$Panel/Reintentar.connect("pressed",self,"on_reiniciar_pressed")
 	$Panel/Salir.connect("pressed",self,"on_salir_pressed")
-	
-	
+
 func on_timer_out():
-	print("timer out")
 	visible = true
 	
 func on_reiniciar_pressed():
