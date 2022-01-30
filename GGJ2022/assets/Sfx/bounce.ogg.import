@@ -11,5 +11,5 @@ dest_files=[ "res://.import/bounce.ogg-dbcd652317b6ae5f5595fe95e33ea8f9.oggstr" 
 
 [params]
 
-loop=true
+loop=false
 loop_offset=0

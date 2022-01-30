@@ -10,7 +10,7 @@
 extents = Vector2( 28, 32 )
 
 [sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 10, 700 )
+extents = Vector2( 10, 1200 )
 
 [node name="Youtuber" type="KinematicBody2D"]
 z_index = 2

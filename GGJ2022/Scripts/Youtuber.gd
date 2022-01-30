@@ -49,7 +49,9 @@ func _process(delta):
 		set_length(selfie_length+extension)
 	if Input.is_action_just_pressed("ui_retract"):	
 		set_length(selfie_length-extension)
-	var collision =	move_and_collide(delta*vel_actual)
+	
+	move_and_slide(vel_actual)
+	#var collision =	move_and_collide(delta*vel_actual)
 	
 	#collision
 	#$SelfieStick/Fantasma.move_and_slide(vel_actual)

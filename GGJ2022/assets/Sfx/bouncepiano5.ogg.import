@@ -11,5 +11,5 @@ dest_files=[ "res://.import/bouncepiano5.ogg-70f100bd4e1a5f69007f2fe24dc871f1.og
 
 [params]
 
-loop=true
+loop=false
 loop_offset=0
