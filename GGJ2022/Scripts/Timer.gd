@@ -17,8 +17,8 @@ func _ready():
 
 
 func _process(delta):
-	$RichTextLabel.bbcode_text="[center]"+str(int($Timer.time_left))+"[/center]"#str(minutes) + ":" + str(seconds) + ":" + str(milliseconds))
-	
+	$RichTextLabel.bbcode_text="[center]"+str(int($Timer.time_left))+"[/center]"
+
 
 func on_timer_out():
 	pass
