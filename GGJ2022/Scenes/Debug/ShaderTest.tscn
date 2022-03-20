@@ -7,6 +7,8 @@
 [sub_resource type="ShaderMaterial" id=2]
 shader = ExtResource( 2 )
 shader_param/pos = null
+shader_param/dir = null
+shader_param/screen_ratio = null
 
 [node name="ShaderTest" type="Node"]
 
