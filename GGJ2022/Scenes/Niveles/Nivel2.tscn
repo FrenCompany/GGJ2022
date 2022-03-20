@@ -157,12 +157,12 @@ scale = Vector2( 2, 2 )
 [node name="SpriteActual" parent="Background/Node2D" instance=ExtResource( 4 )]
 texture = ExtResource( 9 )
 region_enabled = true
-region_rect = Rect2( 400, 300, 800, 600 )
+region_rect = Rect2( 0, 0, 800, 600 )
 
 [node name="SpriteAntiguo" parent="Background/Node2D" instance=ExtResource( 2 )]
 texture = ExtResource( 10 )
 region_enabled = true
-region_rect = Rect2( 400, 300, 800, 600 )
+region_rect = Rect2( 0, 0, 800, 600 )
 
 [node name="Music" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 14 )
